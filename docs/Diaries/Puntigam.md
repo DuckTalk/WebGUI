@@ -2,3 +2,17 @@
 ## by Simon Puntigam
 
 #### --------------------------------------------------------------------------------------------------------------
+
+## 02.03.2023
+# Plan for today:   Project definition, created diary, added Pflichtenheft
+
+#### I've created my diary and we started thinking of what is needed for this project.
+
+#### --------------------------------------------------------------------------------------------------------------
+
+## 9.03.2023
+# Plan for today:   Setting up Django, Finishing Specification book
+
+####
+
+#### --------------------------------------------------------------------------------------------------------------
