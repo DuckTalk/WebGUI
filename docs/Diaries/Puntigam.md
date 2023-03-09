@@ -13,6 +13,7 @@
 ## 9.03.2023
 # Plan for today:   Setting up Django, Finishing Specification book
 
-####
+#### Specification of contents file initialized, Vue.js setup
+#### Django wasent used because many of its functions are not neede and Vue.js is enought.
 
 #### --------------------------------------------------------------------------------------------------------------
