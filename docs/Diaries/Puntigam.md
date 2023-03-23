@@ -17,3 +17,11 @@
 #### Django wasent used because many of its functions are not neede and Vue.js is enought.
 
 #### --------------------------------------------------------------------------------------------------------------
+
+## 23.03.2023
+# Plan for today:   Setting up Django, Finishing Specification book
+
+#### Making a landing page
+#### 
+
+#### --------------------------------------------------------------------------------------------------------------
