@@ -27,5 +27,5 @@
 ## 30.03.2023
 # Plan for today:   Finishing Login page
 
-#### I've edited our Login page and added bootstrap to structure everything.
+####  I have finished the Login page and configured a nginx server for 
 #### --------------------------------------------------------------------------------------------------------------
