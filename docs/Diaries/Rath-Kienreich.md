@@ -38,3 +38,10 @@
 ####  One problem was that Axios changes the path "/api" to "/api/". If this happens you get a bad request.
 ####  Another problem was that development server is not the localhost and so i added this following line: location / {proxy_pass http://host.docker.internal:5173;}
 #### --------------------------------------------------------------------------------------------------------------
+#### --------------------------------------------------------------------------------------------------------------
+
+## 20.04.2023
+# Plan for today:   Creating the SignupView
+
+####  I added the signupview and formated it with bootstrap.
+#### --------------------------------------------------------------------------------------------------------------
