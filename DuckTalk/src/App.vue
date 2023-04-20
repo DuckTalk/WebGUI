@@ -2,6 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import LoginView from './components/LoginView.vue'
+import SignupView from './components/SignupView.vue';
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import LoginView from './components/LoginView.vue'
         <img class="d-block mx-auto" alt="DuckTalk Titel" src="./assets/ducktalk2.png" />
       </div>
       <div class="col p-5 d-flex align-items-center"> 
-          <LoginView />
+          <SignupView />
       </div>
     </div>
   </div>
