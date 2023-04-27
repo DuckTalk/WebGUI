@@ -38,3 +38,17 @@
 ####  One problem was that Axios changes the path "/api" to "/api/". If this happens you get a bad request.
 ####  Another problem was that development server is not the localhost and so i added this following line: location / {proxy_pass http://host.docker.internal:5173;}
 #### --------------------------------------------------------------------------------------------------------------
+#### --------------------------------------------------------------------------------------------------------------
+
+## 20.04.2023
+# Plan for today:   Registration page
+
+####  I designed the Registration page
+#### --------------------------------------------------------------------------------------------------------------
+#### --------------------------------------------------------------------------------------------------------------
+
+## 27.04.2023
+# Plan for today:   Multipage function
+
+####  We tried to fix our multipage problem but there was no success.
+#### --------------------------------------------------------------------------------------------------------------
