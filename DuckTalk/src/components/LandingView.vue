@@ -1,82 +1,83 @@
 <template>
-    <div class="container bg-dark">
-      <div class="row">
-        <div class="" id="chat_background">
-          <div class="card bg-secondary" id="card_bg_secondary">
-            <div class="card-header">
-              <h4 class="text-light">Contacts</h4>
-            </div>
-            <div class="card-body">
-              <ul class="list-group">
-                <li class="list-group-item">
-                  <div class="contact">
-                    <img src="contact1.jpg" alt="Contact 1" class="contact-image">
-                    <div class="contact-details">
-                      <h5 class="text-light">Contact 1</h5>
-                      <p class="text-muted">Last message from Contact 1</p>
-                    </div>
+  <div class="container bg-dark">
+    <div class="row">
+      <div class="position-relative" id="chat_background">
+        <div class="card bg-secondary h-100" id="card_bg_secondary">
+          <div class="card-header">
+            <h4 class="text-light">Contacts</h4>
+          </div>
+          <div class="card-body p-0 m-0" style="width: 100%; height: 100%;">
+            <ul class="list-group h-100">
+              <li class="list-group-item">
+                <div class="contact">
+                  <img src="contact1.jpg" alt="Contact 1" class="contact-image">
+                  <div class="contact-details">
+                    <h5 class="text-light">Contact 1</h5>
+                    <p class="text-muted">Last message from Contact 1</p>
                   </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="contact">
-                    <img src="contact2.jpg" alt="Contact 2" class="contact-image">
-                    <div class="contact-details">
-                      <h5 class="text-light">Contact 2</h5>
-                      <p class="text-muted">Last message from Contact 2</p>
-                    </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="contact">
+                  <img src="contact2.jpg" alt="Contact 2" class="contact-image">
+                  <div class="contact-details">
+                    <h5 class="text-light">Contact 2</h5>
+                    <p class="text-muted">Last message from Contact 2</p>
                   </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="contact">
-                    <div class="contact-details">
-                      <h5 class="text-light">Contact 3</h5>
-                      <p class="text-muted">Last message from Contact 3</p>
-                    </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="contact">
+                  <div class="contact-details">
+                    <h5 class="text-light">Contact 3</h5>
+                    <p class="text-muted">Last message from Contact 3</p>
                   </div>
-                </li>
-              </ul>
-            </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="col-md-8 align-text-bottom">
-          <div class="card bg-secondary" id="chatbox">
-            <div class="card-header">
-              <h4 class="text-light">Chat with Contact 1</h4>
-            </div>
-            <div class="card-body">
-              <ul class="chat">
-                <li class="chat-message incoming">
-                  <div class="chat-message-content">
-                    <p>Hello!</p>
-                  </div>
-                </li>
-                <li class="chat-message outgoing">
-                  <div class="chat-message-content">
-                    <p>Hi, how are you?</p>
-                  </div>
-                </li>
-                <li class="chat-message incoming">
-                  <div class="chat-message-content">
-                    <p>I'm good, thanks! How about you?</p>
-                  </div>
-                </li>
-              </ul>
-              <form class="chat-form" @submit.prevent="sendMessage">
-                <input type="text" class="form-control" v-model="message" placeholder="Type your message...">
-                <button type="submit" class="btn btn-success">Send</button>
-              </form>
-            </div>
+      </div>
+      <div class="col-md-8 align-text-bottom">
+        <div class="card bg-secondary" id="chatbox">
+          <div class="card-header">
+            <h4 class="text-light">Chat with Contact 1</h4>
+          </div>
+          <div class="card-body">
+            <ul class="chat">
+              <li class="chat-message incoming">
+                <div class="chat-message-content">
+                  <p>Hello!</p>
+                </div>
+              </li>
+              <li class="chat-message outgoing">
+                <div class="chat-message-content">
+                  <p>Hi, how are you?</p>
+                </div>
+              </li>
+              <li class="chat-message incoming">
+                <div class="chat-message-content">
+                  <p>I'm good, thanks! How about you?</p>
+                </div>
+              </li>
+            </ul>
+            <form class="chat-form" @submit.prevent="sendMessage">
+              <input type="text" class="form-control" v-model="message" placeholder="Type your message...">
+              <button type="submit" class="btn btn-success">Send</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
 
 <style>
-
 #chat_background {
-    background-color: grey;
+  background-color: grey;
+  position: relative;
 }
+
 
 body {
   background-color: #1c1c1c;
