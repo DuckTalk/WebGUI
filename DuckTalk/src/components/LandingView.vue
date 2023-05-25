@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8 align-text-bottom">
+      <div class="col-md align-text-bottom">
         <div class="card bg-secondary" id="chatbox">
           <div class="card-header">
             <h4 class="text-light">Chat with Contact 1</h4>
@@ -61,7 +61,7 @@
                 </div>
               </li>
             </ul>
-            <form class="chat-form" @submit.prevent="sendMessage">
+            <form class="chat-form" @submit.prevent="get_user">
               <input type="text" class="form-control" v-model="message" placeholder="Type your message...">
               <button type="submit" class="btn btn-success">Send</button>
             </form>
@@ -71,6 +71,35 @@
     </div>
   </div>
 </template>
+
+<script lang="ts">
+
+import axios from 'axios';
+
+export default {
+  methods: {
+    get_user() {
+      axios.get('/api/user/thetestuser1@mail.com')
+        .then((response) => {
+          console.log(response.data);
+          const user_id_1 = response.data;
+        })
+        .catch(function (error) {
+          console.error("Axios Error", error);
+        });
+
+        axios.get('/api/user/thetestuser2@mail.com')
+        .then((response) => {
+          console.log(response.data);
+          const user_id_2 = response.data;
+        })
+        .catch(function (error) {
+          console.error("Axios Error", error);
+        });
+    }
+  }
+};
+</script>
 
 <style>
 #chat_background {
@@ -118,7 +147,7 @@ body {
 }
 
 .chat-message-content {
-  max-width: 60%;
+  max-width: 80%;
   padding: 10px 20px;
   border-radius: 20px;
 }
@@ -167,12 +196,11 @@ body {
     margin-right: 50px;
 }
 
-
-#chatbox{
-    margin-left: 400px;
+.form-control {
+  min-width: 400px;
 }
 
-
+#chatbox{
+    margin-left: 0px;
+}
 </style>
-
-  
