@@ -10,7 +10,7 @@ import LandingView from './components/LandingView.vue';
   <div class="w-100 p-4 d-flex" >
     <div class="row mt-4 pt-4">
       <div class="col p-5 d-flex"> 
-          <LoginView/>
+          <LandingView/>
       </div>
     </div>
   </div>
