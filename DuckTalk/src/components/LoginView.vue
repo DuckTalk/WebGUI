@@ -6,10 +6,12 @@
       <input class="row" type="email" id="email" v-model="email" required>
       <label class="row" for="password">Password:</label>
       <input class="row" type="password" id="password" v-model="password" required>
-      <button class="row btn button bg-secondary" type="submit">Login</button>
+      <router-link to="/landing" class="row btn button bg-secondary" type="submit">Login</router-link>
     </form>
   </div>
 </template>
+
+
 <script>
 import axios from 'axios';
 
@@ -40,4 +42,5 @@ export default {
     }
   }
 };
+
 </script>
