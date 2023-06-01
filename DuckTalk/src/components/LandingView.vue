@@ -79,7 +79,7 @@ import axios from 'axios';
 export default {
   methods: {
     get_user() {
-      axios.get('/api/user/thetestuser1@mail.com')
+      axios.get('ableytner.ddns.net:2006/api/user/thetestuser1@mail.com')
         .then((response) => {
           console.log(response.data);
           const user_id_1 = response.data;
@@ -88,7 +88,7 @@ export default {
           console.error("Axios Error", error);
         });
 
-        axios.get('/api/user/thetestuser2@mail.com')
+        axios.get('ableytner.ddns.net:2006:/api/user/thetestuser2@mail.com')
         .then((response) => {
           console.log(response.data);
           const user_id_2 = response.data;
