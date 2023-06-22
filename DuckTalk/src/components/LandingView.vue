@@ -10,7 +10,6 @@
             <ul class="list-group h-100">
               <li class="list-group-item">
                 <div class="contact">
-                  <img src="contact1.jpg" alt="Contact 1" class="contact-image">
                   <div class="contact-details">
                     <h5 class="text-light">Contact 1</h5>
                     <p class="text-muted">Last message from Contact 1</p>
@@ -19,7 +18,6 @@
               </li>
               <li class="list-group-item">
                 <div class="contact">
-                  <img src="contact2.jpg" alt="Contact 2" class="contact-image">
                   <div class="contact-details">
                     <h5 class="text-light">Contact 2</h5>
                     <p class="text-muted">Last message from Contact 2</p>
@@ -61,9 +59,9 @@
                 </div>
               </li>
             </ul>
-            <form class="chat-form" @submit.prevent="get_user">
-              <input type="text" class="form-control" v-model="message" placeholder="Type your message...">
-              <button type="submit" class="btn btn-success">Send</button>
+            <form class="chat-form">
+              <input type="text" class="form-control" v-model="content">
+              <button type="button" class="btn btn-success" @click="testfunc">Send</button>
             </form>
           </div>
         </div>
@@ -74,29 +72,88 @@
 
 <script lang="ts">
 
-import axios from 'axios';
-
 export default {
+  data() {
+    return {
+      message: 'Type your message...', // Add the 'message' property to the component's data
+      messages: {
+        user1: [],
+        user2: []
+      },
+      newMessage: ''
+    };
+  },
   methods: {
-    get_user() {
-      axios.get('ableytner.ddns.net:2006/api/user/thetestuser1@mail.com')
-        .then((response) => {
-          console.log(response.data);
-          const user_id_1 = response.data;
-        })
-        .catch(function (error) {
-          console.error("Axios Error", error);
-        });
-
-        axios.get('ableytner.ddns.net:2006:/api/user/thetestuser2@mail.com')
-        .then((response) => {
-          console.log(response.data);
-          const user_id_2 = response.data;
-        })
-        .catch(function (error) {
-          console.error("Axios Error", error);
-        });
+     sendMessage: function() {
+      try {
+      const r = await fetch('http://ableytner.ddns.net:2006/api/user/thetestuser1@mail.com', {
+        method: 'GET',
+        //mode: 'no-cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          Accept: 'application/json'
+        },
+      });
+      const json_obj = await r.json();
+      console.log(json_obj);
+    } catch (error) {
+      console.error('Error occoured', error);
     }
+    }
+
+  },
+
+  async get_user() {
+    try {
+      const r = await fetch('http://ableytner.ddns.net:2006/api/user/thetestuser1@mail.com', {
+        method: 'GET',
+        //mode: 'no-cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          Accept: 'application/json'
+        },
+      });
+      const json_obj = await r.json();
+      console.log(json_obj);
+    } catch (error) {
+      console.error('Error occoured', error);
+    }
+  },
+
+  async get_user2() {
+    try {
+      const r = await fetch('http://ableytner.ddns.net:2006/api/user/thetestuser2@mail.com', {
+        method: 'GET',
+        //mode: 'no-cors',
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          Accept: 'application/json'
+        },
+      });
+      const json_obj = await r.json();
+      console.log(json_obj);
+    } catch (error) {
+      console.error('Error occoured', error);
+    }
+  },
+
+  async sendMessageOld() {
+    // Determine the sender and recipient based on your logic
+    console.log("In Send Message");
+    const sender = 'user1';
+    const recipient = 'user2';
+
+    // Create a new message object
+    const message = {
+      id: Date.now(),
+      text: this.newMessage
+    };
+
+    // Add the message to the sender's array
+    this.messages[sender].push(message);
+
+    // Clear the input field
+    this.newMessage = '';
   }
 };
 </script>
@@ -118,13 +175,11 @@ body {
   color: #00ff00;
 }
 
-.card
-
-.card-body {
+.card .card-body {
   background-color: #2b2b2b;
   color: #fff;
   width: 100%;
-  
+
 }
 
 .list-group-item {
@@ -192,15 +247,15 @@ body {
   background-color: #009900;
 }
 
-#card_bg_secondary{
-    margin-right: 50px;
+#card_bg_secondary {
+  margin-right: 50px;
 }
 
 .form-control {
   min-width: 400px;
 }
 
-#chatbox{
-    margin-left: 0px;
+#chatbox {
+  margin-left: 0px;
 }
 </style>
